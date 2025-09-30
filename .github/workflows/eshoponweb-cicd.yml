@@ -29,6 +29,7 @@ jobs:
     - name: Build with dotnet
       run: dotnet build ./eShopOnWeb.sln --configuration Release
     - name: Test with dotnet
+      if: ${{ env.SKIP_TESTS != 'true' }}
       run: dotnet test ./eShopOnWeb.sln --configuration Release
     - name: dotnet publish
       run: |
